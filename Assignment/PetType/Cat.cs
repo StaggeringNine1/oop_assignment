@@ -14,6 +14,8 @@ namespace Assignment.PetType
     {
         public Food MostRecentFood { get; set; }
 
+        private int FoodToEat { get; set; }
+
         public Cat()
         {
             MaxFood = 75;
@@ -58,16 +60,43 @@ namespace Assignment.PetType
                 }
             }
 
-            if (CurrentFood + amountToFeed >= MaxFood)
-            {
-                CurrentFood = MaxFood;
-            }
-            else
-            {
-                CurrentFood += amountToFeed;
-            }
+            FoodToEat = amountToFeed;
 
             MostRecentFood = food;
+        }
+
+        public override void DecreaseFood()
+        {
+            while (true)
+            {
+                if (FoodToEat > 0)
+                {
+                    if (FoodToEat - 5 > MaxFood)
+                    {
+                        CurrentFood = MaxFood;
+                    }
+                    else
+                    {
+                        CurrentFood += 5;
+                    }
+
+                    FoodToEat -= 5;
+                }
+                else
+                {
+                    if (CurrentFood - 5 < 0)
+                    {
+                        CurrentFood = 0;
+                    }
+                    else
+                    {
+                        CurrentFood -= 5;
+                    }
+                }
+                
+
+                Thread.Sleep(1500);
+            }
         }
 
         public override void Play(Toy toy)
