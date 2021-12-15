@@ -25,7 +25,7 @@ namespace Assignment.PetType
             MaxPlay = 75;
             CurrentPlay = MaxPlay;
 
-            PreferredTemperature = 18;
+            room.SetPreferredTemperature(18);
         }
 
         public override void Display()

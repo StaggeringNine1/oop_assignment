@@ -131,10 +131,10 @@ namespace Assignment
 
                         Console.Write(new string(' ', Console.WindowWidth));
                         Console.SetCursorPosition(Console.WindowLeft, Console.GetCursorPosition().Top);
-                        Console.WriteLine($@"Preferred Temperature: {pet.PreferredTemperature}°C");
+                        Console.WriteLine($@"Preferred Temperature: {pet.room.PreferredTemperature}°C");
                         Console.Write(new string(' ', Console.WindowWidth));
                         Console.SetCursorPosition(Console.WindowLeft, Console.GetCursorPosition().Top);
-                        Console.WriteLine($@"Room Temperature: {pet.RoomTemperature}°C");
+                        Console.WriteLine($@"Room Temperature: {pet.room.RoomTemperature}°C");
                     }
                 }
 
@@ -183,7 +183,7 @@ namespace Assignment
             hungerThread = new(pet.DecreaseFood);
             boredomThread = new(pet.DecreasePlay);
             healthThread = new(pet.DecreaseHealth);
-            roomTemperatureThread = new(pet.ChangeRoomTemperature);
+            roomTemperatureThread = new(pet.room.ChangeRoomTemperature);
             moneyThread = new(Shop.IncreaseMoney);
 
             hungerThread.Start();
@@ -350,12 +350,12 @@ namespace Assignment
 
                     case ConsoleKey.NumPad5:
                     case ConsoleKey.D5:
-                        pet.IncreaseRoomTemperature();
+                        pet.room.IncreaseRoomTemperature();
                         break;
 
                     case ConsoleKey.NumPad6:
                     case ConsoleKey.D6:
-                        pet.DecreaseRoomTemperature();
+                        pet.room.DecreaseRoomTemperature();
                         break;
 
                     case ConsoleKey.NumPad7:

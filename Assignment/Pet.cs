@@ -31,14 +31,10 @@ namespace Assignment
         [XmlAttribute("MaxHealth")]
         public int MaxHealth { get; set; }
 
-        [XmlAttribute("PreferredTemperature")]
-        public double PreferredTemperature { get; set; }
-
-        [XmlAttribute("RoomTemperature")]
-        public double RoomTemperature { get; set; } = 15;
-
         [XmlAttribute("PetName")]
         public string PetName { get; set; } = null;
+
+        public Room room = new(1);
 
         public virtual void Display()
         {
@@ -94,37 +90,6 @@ namespace Assignment
             }
         }
 
-        public virtual void ChangeRoomTemperature()
-        {
-            Random random = new();
-
-            while (true)
-            {
-                int randomNumber = random.Next(1, 2);
-
-                if (randomNumber == 1)
-                {
-                    RoomTemperature += 0.25 * random.Next(1, 3);
-                }
-                else
-                {
-                    RoomTemperature -= 0.25 * random.Next(1, 3);
-                }
-
-                Thread.Sleep(3000);
-            }
-        }
-
-        public virtual void IncreaseRoomTemperature()
-        {
-            RoomTemperature += 0.5;
-        }
-
-        public virtual void DecreaseRoomTemperature()
-        {
-            RoomTemperature -= 0.5;
-        }
-
         public virtual void DecreaseHealth()
         {
             while (true)
@@ -141,7 +106,7 @@ namespace Assignment
                     }
                 }
 
-                if (RoomTemperature < PreferredTemperature - (PreferredTemperature / 4) || RoomTemperature > PreferredTemperature + (PreferredTemperature / 4))
+                if (room.RoomTemperature < room.PreferredTemperature - (room.PreferredTemperature / 4) || room.RoomTemperature > room.PreferredTemperature + (room.PreferredTemperature / 4))
                 {
                     if (CurrentHealth - 2 < 0)
                     {
