@@ -11,6 +11,7 @@ namespace Assignment
 {
     public abstract class Shop
     {
+        // Using static variables to be accessable from multiple classes without having to be passed through parameters
         public static double Money { get; set; } = 30;
 
         public static void IncreaseMoney()

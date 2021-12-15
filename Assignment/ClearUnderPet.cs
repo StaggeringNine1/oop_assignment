@@ -8,6 +8,10 @@ namespace Assignment
 {
     internal class ClearUnderPet
     {
+        /// <summary>
+        /// Clear all stats from console
+        /// </summary>
+        /// <param name="windowTop"></param>
         public static void Clear(int windowTop)
         {
             Console.SetCursorPosition(Console.WindowLeft, windowTop + 5);

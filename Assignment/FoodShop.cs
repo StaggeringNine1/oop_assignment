@@ -7,6 +7,9 @@ using System.Threading;
 
 namespace Assignment
 {
+    /// <summary>
+    /// Inherits both IShop and Shop to ensure existence of Purchase() and to access static Money
+    /// </summary>
     internal class FoodShop : Shop, IShop
     {
         public object Purchase(int windowTop)

@@ -14,6 +14,16 @@ namespace Assignment
 {
     internal class LoadFromXML
     {
+
+        /// <summary>
+        /// Return the loaded pet data if any
+        /// </summary>
+        /// <returns>Retursn object[5], [0] being Pet, 
+        /// [1] being foodInventory 
+        /// [2] being medicineInventory
+        /// [3] being toyInventory
+        /// [4] being money
+        /// </returns>
         public static object[] LoadPet()
         {
             object[] ReturnObjects = new object[5];

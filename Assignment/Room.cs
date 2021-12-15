@@ -11,10 +11,12 @@ namespace Assignment
     {
         public double PreferredTemperature { get; private set; }
         public double RoomTemperature { get; private set; } = 15;
+        public double AmbientTemperature { get; private set; }
 
         public Room(double preferredTemperature)
         {
             PreferredTemperature = preferredTemperature;
+            AmbientTemperature = RoomTemperature;
         }
 
         public void SetPreferredTemperature(double preferredTemperature)
@@ -28,16 +30,19 @@ namespace Assignment
 
             while (true)
             {
-                int randomNumber = random.Next(1, 2);
-
-                if (randomNumber == 1)
+                if (RoomTemperature < AmbientTemperature - 1)
                 {
-                    RoomTemperature += 0.25 * random.Next(1, 3);
+
+                    RoomTemperature += 3.5 * random.Next(1, 3);
+                }
+                else if (RoomTemperature > AmbientTemperature + 1)
+                {
+                    RoomTemperature -= 3.5 * random.Next(1, 3);
                 }
                 else
                 {
-                    RoomTemperature -= 0.25 * random.Next(1, 3);
-                }
+                    RoomTemperature = AmbientTemperature;
+                }                
 
                 Thread.Sleep(3000);
             }

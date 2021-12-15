@@ -9,6 +9,11 @@ namespace Assignment
 {
     internal class GetClassName
     {
+        /// <summary>
+        /// Return the name of the class without Namespace.Folder
+        /// </summary>
+        /// <param name="input">Class name as string</param>
+        /// <returns>Returns name of class as string</returns>
         public static string Get(string input)
         {
             string convertedWord;
@@ -24,6 +29,11 @@ namespace Assignment
             return convertedWord;
         }
 
+        /// <summary>
+        /// Return the name of the class without Namespace.Folder
+        /// </summary>
+        /// <param name="input">Class Type</param>
+        /// <returns>Returns name of class as string</returns>
         public static string Get(Type input)
         {
             string convertedWord;

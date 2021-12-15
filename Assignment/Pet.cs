@@ -106,7 +106,7 @@ namespace Assignment
                     }
                 }
 
-                if (room.RoomTemperature < room.PreferredTemperature - (room.PreferredTemperature / 4) || room.RoomTemperature > room.PreferredTemperature + (room.PreferredTemperature / 4))
+                if (room.RoomTemperature < room.PreferredTemperature - 2 || room.RoomTemperature > room.PreferredTemperature + 2)
                 {
                     if (CurrentHealth - 2 < 0)
                     {

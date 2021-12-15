@@ -22,7 +22,7 @@ namespace Assignment.PetType
             MaxPlay = 100;
             CurrentPlay = MaxPlay;
 
-            room.SetPreferredTemperature(20);
+            room.SetPreferredTemperature(23);
         }
 
         public override void Display()
@@ -85,6 +85,17 @@ namespace Assignment.PetType
             else
             {
                 CurrentHealth += medicine.MedicineAmount;
+            }
+
+            int amountToFeed = medicine.MedicineAmount / 2;
+
+            if (CurrentFood + amountToFeed >= MaxFood)
+            {
+                CurrentFood = MaxFood;
+            }
+            else
+            {
+                CurrentFood += amountToFeed;
             }
         }
     }
