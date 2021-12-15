@@ -26,18 +26,16 @@ namespace Assignment
 
         public void ChangeRoomTemperature()
         {
-            Random random = new();
-
             while (true)
             {
                 if (RoomTemperature < AmbientTemperature - 1)
                 {
 
-                    RoomTemperature += 3.5 * random.Next(1, 3);
+                    RoomTemperature += 3.5;
                 }
                 else if (RoomTemperature > AmbientTemperature + 1)
                 {
-                    RoomTemperature -= 3.5 * random.Next(1, 3);
+                    RoomTemperature -= 3.5;
                 }
                 else
                 {
