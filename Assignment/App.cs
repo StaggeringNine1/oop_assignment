@@ -105,27 +105,42 @@ namespace Assignment
                         Console.Write(new string(' ', Console.WindowWidth));
                         Console.SetCursorPosition(Console.WindowLeft, Console.GetCursorPosition().Top);
                         Console.Write("Health Level: [");
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write(new string('█', healthBlocks));
-                        Console.Write(new string(' ', totalHealthBlocks - healthBlocks));
+
+                        if (healthBlocks > 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(new string('█', healthBlocks));
+                            Console.Write(new string(' ', totalHealthBlocks - healthBlocks));
+                        }
+                        
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("]");
 
                         Console.Write(new string(' ', Console.WindowWidth));
                         Console.SetCursorPosition(Console.WindowLeft, Console.GetCursorPosition().Top);
                         Console.Write("Happiness Level: [");
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write(new string('█', playBlocks));
-                        Console.Write(new string(' ', totalPlayBlocks - playBlocks));
+
+                        if (playBlocks > 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(new string('█', playBlocks));
+                            Console.Write(new string(' ', totalPlayBlocks - playBlocks));
+                        }
+                        
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("]");
 
                         Console.Write(new string(' ', Console.WindowWidth));
                         Console.SetCursorPosition(Console.WindowLeft, Console.GetCursorPosition().Top);
                         Console.Write("Food Level: [");
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write(new string('█', foodBlocks));
-                        Console.Write(new string(' ', totalFoodBlocks - foodBlocks));
+
+                        if (foodBlocks > 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write(new string('█', foodBlocks));
+                            Console.Write(new string(' ', totalFoodBlocks - foodBlocks));
+                        }
+                        
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("]");
 

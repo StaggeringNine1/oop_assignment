@@ -37,11 +37,11 @@ namespace Assignment
                 if (RoomTemperature < AmbientTemperature - 1)
                 {
 
-                    RoomTemperature += 3.5;
+                    RoomTemperature += 1.5;
                 }
                 else if (RoomTemperature > AmbientTemperature + 1)
                 {
-                    RoomTemperature -= 3.5;
+                    RoomTemperature -= 1.5;
                 }
                 else
                 {
