@@ -9,13 +9,19 @@ namespace Assignment
 {
     public class Room
     {
-        public double PreferredTemperature { get; private set; }
-        public double RoomTemperature { get; private set; } = 15;
-        public double AmbientTemperature { get; private set; }
-
+        public double PreferredTemperature { get; set; }
+        public double RoomTemperature { get; set; } = 15;
+        public double AmbientTemperature { get; set; }
+        
         public Room(double preferredTemperature)
         {
             PreferredTemperature = preferredTemperature;
+            AmbientTemperature = RoomTemperature;
+        }
+
+        public Room()
+        {
+            PreferredTemperature = RoomTemperature;
             AmbientTemperature = RoomTemperature;
         }
 
